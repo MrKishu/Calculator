@@ -1,1 +1,80 @@
 <!-- # Calculator  -  A basic calculator built using HTML, CSS, and JavaScript. It performs simple arithmetic operations like addition, subtraction, multiplication, and division. This is my first front-end project. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GlowCalc — Enhanced</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="Cal.css" />
+</head>
+<body>
+  <!-- 
+    Theme toggle implemented with an input checkbox.
+    CSS targets the .app when #theme-toggle is checked to switch variables.
+    This requires no JS.
+  -->
+  <input id="theme-toggle" class="theme-toggle" type="checkbox" aria-label="Toggle theme" />
+
+  <main class="app" role="application" aria-label="Animated calculator">
+    <header class="brand">
+      
+
+     
+    </header>
+
+    <section class="calculator" aria-labelledby="calc-title">
+      <h2 id="calc-title" class="sr-only">Calculator</h2>
+
+      <!-- Display area with copy button (copy functionality can be added in JS) -->
+      <div class="display" id="display" aria-live="polite" role="status">
+        <div class="history" id="history" aria-hidden="true"></div>
+
+        <div class="current-row">
+          <div class="current" id="current" tabindex="0">0</div>
+
+          <!-- copy button (styled) - you can add JS to copy #current text -->
+          <button class="copy-btn" id="copyBtn" title="Copy result (needs JS)">
+            📋
+          </button>
+        </div>
+      </div>
+
+      <!-- Buttons grid -->
+      <div class="pad" role="group" aria-label="Calculator buttons">
+        <button class="btn action" data-action="clear" title="Clear (Esc)">AC</button>
+        <button class="btn action" data-action="back" title="Backspace (Backspace)">⌫</button>
+        <button class="btn action" data-action="percent" title="Percent">%</button>
+        <button class="btn op" data-value="/" title="Divide">÷</button>
+
+        <button class="btn num" data-value="7">7</button>
+        <button class="btn num" data-value="8">8</button>
+        <button class="btn num" data-value="9">9</button>
+        <button class="btn op" data-value="*" title="Multiply">×</button>
+
+        <button class="btn num" data-value="4">4</button>
+        <button class="btn num" data-value="5">5</button>
+        <button class="btn num" data-value="6">6</button>
+        <button class="btn op" data-value="-" title="Subtract">−</button>
+
+        <button class="btn num" data-value="1">1</button>
+        <button class="btn num" data-value="2">2</button>
+        <button class="btn num" data-value="3">3</button>
+        <button class="btn op" data-value="+" title="Add">+</button>
+
+        <button class="btn num double" data-value="0" aria-label="Zero">0</button>
+        <button class="btn num" data-value=".">.</button>
+        <button class="btn eq" data-action="equals" title="Equals (Enter)">=</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+     
+    </footer>
+  </main>
+
+  <!-- Keep your existing JS (script.js) -->
+  <script src="Cal.js" defer></script>
+</body>
+</html>
